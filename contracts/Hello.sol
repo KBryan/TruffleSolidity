@@ -1,10 +1,12 @@
 pragma solidity >=0.4.20;
 
 contract Hello {
-    string greeting;
+    
+    string greeting = "hell0";
+    mapping (address => uint256) public greetingCount;
 
     constructor() public {
-        greeting = "hello";
+        greetingCount[msg.sender] = 1000;
     }
 
     function getGreeting() public view returns (string memory) {
